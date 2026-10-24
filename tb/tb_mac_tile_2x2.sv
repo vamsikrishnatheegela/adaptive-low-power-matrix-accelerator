@@ -24,7 +24,7 @@ module tb_mac_tile_2x2;
         check_result(-52,63,44,-60,"signed products");
         a00=-128; a01=127; a10=127; a11=-128;
         b00=-128; b01=127; b10=127; b11=-128;
-        check_result(32257,-32512,-32512,32257,"boundary values");
+        check_result(32513,-32512,-32512,32513,"boundary values");
         for (i=0;i<100;i=i+1) begin
             a00=$random; a01=$random; a10=$random; a11=$random;
             b00=$random; b01=$random; b10=$random; b11=$random;
