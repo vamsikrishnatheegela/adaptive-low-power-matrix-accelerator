@@ -1,4 +1,5 @@
 // Sequential wrapper around the combinational 2x2 tile.
+`timescale 1ns/1ps
 // One input matrix pair is accepted per transaction; outputs are held until next completion.
 module matrix_accelerator (
     input logic clk, reset_n,
