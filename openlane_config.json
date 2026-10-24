@@ -10,6 +10,11 @@
   "CLOCK_PERIOD": 20,
   "PNR_SDC_FILE": "dir::constraints/power_aware_matrix_accelerator.sdc",
   "SIGNOFF_SDC_FILE": "dir::constraints/power_aware_matrix_accelerator.sdc",
+  "GRT_ANTENNA_ITERS": 10,
+  "GRT_ANTENNA_MARGIN": 20,
+  "RUN_HEURISTIC_DIODE_INSERTION": true,
+  "GPL_CELL_PADDING": 2,
+  "DPL_CELL_PADDING": 2,
   "DRT_ANTENNA_REPAIR_ITERS": 5,
   "DRT_ANTENNA_MARGIN": 20
 }
