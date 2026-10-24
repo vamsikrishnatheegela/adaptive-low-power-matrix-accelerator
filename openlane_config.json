@@ -7,5 +7,7 @@
     "dir::rtl/power_aware_matrix_accelerator.sv"
   ],
   "CLOCK_PORT": "clk",
-  "CLOCK_PERIOD": 20
+  "CLOCK_PERIOD": 20,
+  "PNR_SDC_FILE": "dir::constraints/power_aware_matrix_accelerator.sdc",
+  "SIGNOFF_SDC_FILE": "dir::constraints/power_aware_matrix_accelerator.sdc"
 }
