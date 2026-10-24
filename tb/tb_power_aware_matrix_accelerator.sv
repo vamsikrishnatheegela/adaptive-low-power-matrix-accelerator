@@ -34,12 +34,12 @@ module tb_power_aware_matrix_accelerator;
         check_condition(busy,"accepted operation should be busy");
 
         // A sleep request during a transaction must not power the domain off.
+        // Check each cycle while busy so the one-cycle done pulse cannot be missed.
         sleep_request=1; idle_count=4;
-        repeat (2) begin
+        while (busy) begin
             @(negedge clk);
             check_condition(power_domain_on,"must remain powered during active transaction");
         end
-        wait(done);
         #1;
         check_condition(c00==19 && c01==22 && c10==43 && c11==50,
                         "integrated matrix result mismatch");
