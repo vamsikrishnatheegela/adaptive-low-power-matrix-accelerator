@@ -1,24 +1,36 @@
 # Physical Design Results
 
-## Run summary
+## Most recent observed implementation run
 
 - **Flow:** OpenLane 2.3.10
 - **PDK:** SkyWater SKY130A
 - **Top module:** `power_aware_matrix_accelerator`
-- **Clock constraint:** 20 ns (50 MHz target)
-- **Run date:** 2026-10-24
+- **Clock target:** 20 ns (50 MHz)
+- **Run ID:** `RUN_2026-10-24_14-30-18`
 - **Flow completion:** 78/78 stages completed
-- **Generated outputs:** GDS, DEF, LEF, timing SDC, and synthesized/placed netlists
+- **Generated outputs:** GDS, DEF, LEF, timing SDC, and implementation netlists
 - **LVS:** Passed
 - **DRC:** Passed
-- **Antenna check:** Not clean; violations remain after repair
-- **Timing:** Reported setup/hold violation counts are zero under the flow's configured constraints; this is not signoff evidence because dedicated PNR/signoff SDC files were not supplied and fallback constraints were used.
+- **Antenna:** Not clean; final summary reported **3 net violations and 3 pin violations** after repair
 
-## Reported implementation metrics
+Flow completion means the implementation steps ran; it does not mean the layout is clean for signoff. The antenna issues and reported electrical-rule warnings remain open.
 
-Values below are copied from the OpenLane run metrics. Interpret area and power in the context of the selected platform and flow configuration; these are not independent silicon measurements.
+## Current antenna-repair configuration
 
-| Metric | Reported value |
+Commit `f141cd8` updates `openlane_config.json` with documented controls for both global-route and detailed-route mitigation:
+
+- `GRT_ANTENNA_ITERS: 10` and `GRT_ANTENNA_MARGIN: 20`
+- `RUN_HEURISTIC_DIODE_INSERTION: true`
+- `GPL_CELL_PADDING: 2` and `DPL_CELL_PADDING: 2` for heuristic diode insertion placement
+- `DRT_ANTENNA_REPAIR_ITERS: 5` and `DRT_ANTENNA_MARGIN: 20`
+
+**These settings have not yet been validated by a new OpenLane run.** Re-run the flow and inspect the final manufacturability/antenna reports; do not describe antenna closure until the final report confirms zero violations.
+
+## Historical metrics from an earlier run
+
+The following numbers are preserved from `RUN_2026-10-24_14-02-13`. That run used fallback timing constraints before the repository SDC was wired into the OpenLane configuration. These metrics are historical and must not be attributed to later runs.
+
+| Metric | Historical reported value |
 | --- | ---: |
 | Standard-cell instance count | 5,421 |
 | Instance area | 34,493.1 platform area units |
@@ -31,21 +43,17 @@ Values below are copied from the OpenLane run metrics. Interpret area and power 
 | Setup TNS / WNS | 0 / 0 |
 | Hold TNS / WNS | 0 / 0 |
 
-## Outstanding physical-design checks
+Area and power are flow-reported values tied to the platform and implementation setup, not independent silicon measurements. Do not claim measured power savings from these estimates.
 
-The final manufacturability summary reports **1 antenna-net violation and 3 antenna-pin violations** after antenna repair. The antenna report also contains pre-repair entries for six nets/pins; use the final summary when describing the end state.
+## Outstanding checks
 
-The run also reports:
-- 17 max-slew violations across checked corners
-- 8 max-fanout violations
-- 1 max-capacitance violation in the aggregated metric (corner-specific metrics vary)
-- 442 Verilator lint warnings, many of the shown examples are timescale warnings in generated files
-- Generic fallback SDC used because dedicated PNR and signoff SDC files were not configured
-- Missing routing/IR-analysis inputs were flagged by the flow
+The implementation logs also reported lint warnings, global-routing messages for nets, an unsupported LEF58 enclosure construct in antenna processing, a high-fanout net, missing IR-analysis input data, and max-slew/max-capacitance violations. Review the reports from the newest run rather than assuming these are resolved by the antenna configuration changes.
 
-## Interpretation
-
-This is a successful **RTL-to-GDSII flow execution and useful implementation milestone**, but it is **not a clean signoff result**. LVS and DRC passed; antenna and electrical-rule issues and the incomplete signoff constraint setup remain open. Do not describe the design as tapeout-ready or claim measured power savings from these flow estimates.
+Before signoff, verify:
+- Zero final antenna violations.
+- Max slew, max capacitance, and max fanout are within the library rules.
+- The configured PNR and signoff SDCs are loaded, all relevant ports are constrained, and timing reports show no unconstrained paths.
+- Required DRC/LVS and power-integrity checks are clean with the intended signoff setup.
 
 ## Reproduction
 
@@ -58,11 +66,4 @@ openlane \
   openlane_config.json
 ```
 
-Adjust `--pdk-root` to match the local PDK installation. The run directory and generated reports are local build artifacts and should not be committed wholesale.
-
-
-## Follow-up constraint setup (added after the recorded run)
-
-The repository now includes `constraints/power_aware_matrix_accelerator.sdc`, referenced by both `PNR_SDC_FILE` and `SIGNOFF_SDC_FILE` in `openlane_config.json`. It defines a 20 ns clock, 0.2 ns clock uncertainty, 2 ns maximum input/output delay budgets, 0.2 ns minimum input delay, and a nominal output load.
-
-These are **initial integration assumptions**, not values measured from an external interface specification. The metrics above are from the earlier run, which used fallback constraints; they must not be attributed to this new SDC. Rerun OpenLane and inspect the constraint-check and timing reports before interpreting timing slack. If the run flags unsupported SDC syntax or unconstrained ports, fix those findings rather than treating the SDC file's presence as proof of complete timing coverage.
+Adjust `--pdk-root` for your local PDK installation. Run directories and generated reports are local build artifacts and should not be committed wholesale.
