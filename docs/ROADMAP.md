@@ -4,12 +4,12 @@
 - [x] Signed INT8 2×2 tile and testbench
 - [x] Power-manager FSM scaffold and testbench
 - [x] Reproducible Icarus Verilog script
-- [ ] Run regression locally and fix all failures
+- [x] Run baseline regression locally; all three original tests passed
 - [x] Add CI regression (GitHub Actions passed on current RTL revision)
 
 ## Stage 2 — Integration and verification
 - [x] Add sequential wrapper with start/busy/done and passing directed test
-- [ ] Add independent reference scoreboard
+- [x] Add independent signed-integer reference scoreboard (502 vectors)
 - [ ] Add quiesce/idle acknowledgement and defined reset behavior
 - [ ] Add assertions and functional coverage
 - [ ] Test wake-up and operating-point changes under busy/idle conditions
