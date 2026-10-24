@@ -2,7 +2,7 @@
 
 [![RTL regression](https://github.com/vamsikrishnatheegela/adaptive-low-power-matrix-accelerator/actions/workflows/rtl-regression.yml/badge.svg)](https://github.com/vamsikrishnatheegela/adaptive-low-power-matrix-accelerator/actions/workflows/rtl-regression.yml)
 
-A staged SystemVerilog portfolio project for a signed INT8 matrix-multiplication tile and adaptive low-power control. This is a baseline scaffold; physical clock gating, power gating, DVFS hardware, and RTL-to-GDSII results are **not yet implemented or measured**.
+A SystemVerilog portfolio project for a signed INT8 matrix-multiplication tile and adaptive low-power control. The RTL regression passes, and an OpenLane 2.3.10 SKY130A RTL-to-GDSII flow has completed. The physical low-power mechanisms remain control-plane models; see the [physical-design results and signoff gaps](docs/PHYSICAL_DESIGN_RESULTS.md).
 
 ## Contents
 - `rtl/mac_tile_2x2.sv`: combinational signed INT8 2×2 matrix multiply.
@@ -10,7 +10,8 @@ A staged SystemVerilog portfolio project for a signed INT8 matrix-multiplication
 - `rtl/adaptive_power_manager.sv`: power-state and operating-point control-plane FSM.
 - `tb/`: self-checking testbenches, including a 502-vector independent arithmetic scoreboard.
 - `scripts/run_iverilog.sh`: reproducible simulation regression.
-- `docs/`: architecture, roadmap, and results template.
+- `docs/`: architecture, roadmap, results template, and [physical-design results](docs/PHYSICAL_DESIGN_RESULTS.md).
+- `openlane_config.json`: reproducible OpenLane configuration for the integrated top module.
 
 ## Run
 Requirements: Icarus Verilog (`iverilog`, `vvp`), Bash; GNU Make is optional.
@@ -44,9 +45,9 @@ This is a small verification-friendly starting point, not a production accelerat
 | Datapath testbench | Directed/random test (103 vectors); independent scoreboard (502 vectors) |
 | Power-manager FSM | Baseline RTL and testbench passing in CI |
 | Sequential start/busy/done wrapper | RTL and testbench passing in CI |
-| ICG mapping / physical gated clock | Not implemented |
-| UPF, switches, isolation, retention | Not implemented |
-| Physical DVFS | Not implemented |
-| Synthesis / RTL-to-GDSII PPA | Not measured |
+| ICG mapping / physical gated clock | Not implemented; enable intent only |
+| UPF, switches, isolation, retention | Not implemented; power control is a model |
+| Physical DVFS | Not implemented; request/ack control-plane model only |
+| Generic synthesis | Completed with Yosys; generic cell count is not physical area |\n| OpenLane RTL-to-GDSII | Flow completed; GDS/DEF/LEF generated, LVS and DRC passed |\n| Physical signoff | Open: antenna, slew/fanout/capacitance issues and dedicated signoff SDC remain |
 
-See [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md), and [results template](docs/RESULTS_TEMPLATE.md).
+See [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md), [results template](docs/RESULTS_TEMPLATE.md), and [physical-design results](docs/PHYSICAL_DESIGN_RESULTS.md).
