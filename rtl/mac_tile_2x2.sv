@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+`timescale 1ns/1ps
 module mac_tile_2x2 (
     input logic signed [7:0] a00, a01, a10, a11,
     input logic signed [7:0] b00, b01, b10, b11,
