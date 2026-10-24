@@ -1,34 +1,68 @@
 # Physical Design Results
 
-## Most recent observed implementation run
+## Latest observed implementation run
 
 - **Flow:** OpenLane 2.3.10
 - **PDK:** SkyWater SKY130A
 - **Top module:** `power_aware_matrix_accelerator`
 - **Clock target:** 20 ns (50 MHz)
-- **Run ID:** `RUN_2026-10-24_14-30-18`
+- **Run ID:** `RUN_2026-10-24_14-41-17`
 - **Flow completion:** 78/78 stages completed
 - **Generated outputs:** GDS, DEF, LEF, timing SDC, and implementation netlists
+- **Antenna:** Passed
 - **LVS:** Passed
 - **DRC:** Passed
-- **Antenna:** Not clean; final summary reported **3 net violations and 3 pin violations** after repair
+- **Maximum slew/capacitance:** Checker emitted warnings for multiple corners; log also printed “No max slew violations found” and “No max cap violations found.” Treat these checks as **unresolved until the detailed reports are inspected**.
 
-Flow completion means the implementation steps ran; it does not mean the layout is clean for signoff. The antenna issues and reported electrical-rule warnings remain open.
+This is a significant RTL-to-GDSII implementation milestone. It is not yet a clean signoff result: the max-slew/max-capacitance checker output is internally inconsistent, 442 lint warnings remain, and some flow warnings require review.
 
 ## Current antenna-repair configuration
 
-Commit `f141cd8` updates `openlane_config.json` with documented controls for both global-route and detailed-route mitigation:
+The tracked `openlane_config.json` enables:
 
 - `GRT_ANTENNA_ITERS: 10` and `GRT_ANTENNA_MARGIN: 20`
 - `RUN_HEURISTIC_DIODE_INSERTION: true`
-- `GPL_CELL_PADDING: 2` and `DPL_CELL_PADDING: 2` for heuristic diode insertion placement
+- `GPL_CELL_PADDING: 2` and `DPL_CELL_PADDING: 2`
 - `DRT_ANTENNA_REPAIR_ITERS: 5` and `DRT_ANTENNA_MARGIN: 20`
 
-**These settings have not yet been validated by a new OpenLane run.** Re-run the flow and inspect the final manufacturability/antenna reports; do not describe antenna closure until the final report confirms zero violations.
+The latest observed run reports antenna, LVS, and DRC as passed with this configuration.
+
+## Warnings in the latest run
+
+The run log reported:
+
+- 442 Verilator lint warnings; inspect the warning details and distinguish RTL issues from generated-file/timescale warnings.
+- Global-routing messages: `GRT-0097 No global routing found for nets` (and similar messages).
+- Detailed-routing warning that `LEF58_ENCLOSURE` without `CUTCLASS` is unsupported for layer `mcon`.
+- Large routed nets with many pins, which may affect routing performance.
+- The wire-length checker was skipped because no threshold was configured.
+- `VSRC_LOC_FILES` was not supplied; power-integrity/IR-drop results may therefore be inaccurate.
+- An output pin lacks antenna-diffusion information in the cell definition; review the relevant OpenROAD antenna-property warning.
+- Maximum-slew and maximum-capacitance checker warnings for `max_ss_100C_1v60`, `min_ss_100C_1v60`, and `nom_ss_100C_1v60`, despite contradictory “No ... violations found” messages.
+
+Do not assume the slew/capacitance warnings are harmless. Inspect the detailed reports and confirm whether actual violating nets/pins remain.
+
+## Next checks
+
+From the repository root, identify the latest run and locate the checker reports:
+
+```bash
+RUN="$(find runs -maxdepth 1 -type d -name 'RUN_*' -printf '%T@ %p\\n' | sort -nr | head -n 1 | cut -d' ' -f2-)"
+echo "Latest run: $RUN"
+find "$RUN" -type f \\( -iname '*slew*' -o -iname '*cap*' -o -iname '*manufacturability*' \\) -print
+grep -RniE 'violation|violations|worst slack|VIOLATED|No max (slew|cap)' "$RUN" \\
+  --include='*.rpt' --include='*.json' --include='*.log' 2>/dev/null | head -n 200
+```
+
+Before signoff, verify:
+- Antenna, DRC, and LVS reports remain clean.
+- Maximum slew, maximum capacitance, and maximum fanout have no unresolved violations.
+- PNR and signoff SDCs are loaded, relevant ports are constrained, and timing reports show no unconstrained paths.
+- Power-integrity checks use appropriate source-location inputs if IR-drop results are to be relied on.
 
 ## Historical metrics from an earlier run
 
-The following numbers are preserved from `RUN_2026-10-24_14-02-13`. That run used fallback timing constraints before the repository SDC was wired into the OpenLane configuration. These metrics are historical and must not be attributed to later runs.
+The following numbers are preserved from `RUN_2026-10-24_14-02-13`. That run used fallback timing constraints before the repository SDC was wired into the OpenLane configuration. These metrics are historical and must not be attributed to the latest run.
 
 | Metric | Historical reported value |
 | --- | ---: |
@@ -45,24 +79,14 @@ The following numbers are preserved from `RUN_2026-10-24_14-02-13`. That run use
 
 Area and power are flow-reported values tied to the platform and implementation setup, not independent silicon measurements. Do not claim measured power savings from these estimates.
 
-## Outstanding checks
-
-The implementation logs also reported lint warnings, global-routing messages for nets, an unsupported LEF58 enclosure construct in antenna processing, a high-fanout net, missing IR-analysis input data, and max-slew/max-capacitance violations. Review the reports from the newest run rather than assuming these are resolved by the antenna configuration changes.
-
-Before signoff, verify:
-- Zero final antenna violations.
-- Max slew, max capacitance, and max fanout are within the library rules.
-- The configured PNR and signoff SDCs are loaded, all relevant ports are constrained, and timing reports show no unconstrained paths.
-- Required DRC/LVS and power-integrity checks are clean with the intended signoff setup.
-
 ## Reproduction
 
 From the repository root, with OpenLane 2 installed and a SKY130A PDK available:
 
 ```bash
-openlane \
-  --pdk-root "$HOME/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af" \
-  --pdk sky130A \
+openlane \\
+  --pdk-root "$HOME/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af" \\
+  --pdk sky130A \\
   openlane_config.json
 ```
 
