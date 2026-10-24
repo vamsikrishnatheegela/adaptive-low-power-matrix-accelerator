@@ -30,7 +30,9 @@ module adaptive_power_manager #(
         case (state)
             ST_ACTIVE: begin
                 compute_enable = workload_active;
-                if (requested_operating_point != operating_point)
+                // Do not begin an operating-point transition while work is active.
+                // Defer both DVFS and sleep until the workload has drained.
+                if (!workload_active && requested_operating_point != operating_point)
                     next_state = ST_DVFS_WAIT;
                 else if (sleep_request && !workload_active && (idle_count != '0))
                     next_state = ST_POWER_OFF;
@@ -57,7 +59,8 @@ module adaptive_power_manager #(
             target_operating_point <= 2'd1;
         end else begin
             state <= next_state;
-            if (state == ST_ACTIVE && requested_operating_point != operating_point)
+            if (state == ST_ACTIVE && !workload_active &&
+                requested_operating_point != operating_point)
                 target_operating_point <= requested_operating_point;
             if (state == ST_DVFS_WAIT && dvfs_ack)
                 operating_point <= target_operating_point;
