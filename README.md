@@ -43,7 +43,8 @@ This is a small verification-friendly starting point, not a production accelerat
 | Signed INT8 2×2 tile | Baseline RTL included |
 | Datapath testbench | Passing in GitHub Actions (103 vectors) |
 | Power-manager FSM | Baseline RTL and testbench passing in CI |
-| Sequential start/busy/done wrapper | RTL and testbench passing in CI |\n| ICG mapping / physical gated clock | Not implemented |
+| Sequential start/busy/done wrapper | RTL and testbench passing in CI |
+| ICG mapping / physical gated clock | Not implemented |
 | UPF, switches, isolation, retention | Not implemented |
 | Physical DVFS | Not implemented |
 | Synthesis / RTL-to-GDSII PPA | Not measured |
