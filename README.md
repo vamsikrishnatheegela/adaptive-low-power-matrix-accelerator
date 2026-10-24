@@ -8,7 +8,7 @@ A staged SystemVerilog portfolio project for a signed INT8 matrix-multiplication
 - `rtl/mac_tile_2x2.sv`: combinational signed INT8 2×2 matrix multiply.
 - `rtl/matrix_accelerator.sv`: sequential start/busy/done wrapper around the tile.
 - `rtl/adaptive_power_manager.sv`: power-state and operating-point control-plane FSM.
-- `tb/`: self-checking testbenches for arithmetic, control sequencing, and the sequential wrapper.
+- `tb/`: self-checking testbenches, including a 502-vector independent arithmetic scoreboard.
 - `scripts/run_iverilog.sh`: reproducible simulation regression.
 - `docs/`: architecture, roadmap, and results template.
 
@@ -21,7 +21,7 @@ bash scripts/run_iverilog.sh
 make test
 ```
 
-The script builds in a temporary directory and removes artifacts on exit.
+The script builds in a temporary directory and removes artifacts on exit. The independent arithmetic scoreboard uses a fixed seed for reproducibility.
 
 ## Datapath
 For signed 2×2 matrices, `C=A×B`. Each input is signed 8-bit; each output is signed 17-bit, sufficient for the sum of two signed 8×8 products:
@@ -41,7 +41,7 @@ This is a small verification-friendly starting point, not a production accelerat
 | Feature | Status |
 |---|---|
 | Signed INT8 2×2 tile | Baseline RTL included |
-| Datapath testbench | Passing in GitHub Actions (103 vectors) |
+| Datapath testbench | Directed/random test (103 vectors); independent scoreboard (502 vectors) |
 | Power-manager FSM | Baseline RTL and testbench passing in CI |
 | Sequential start/busy/done wrapper | RTL and testbench passing in CI |
 | ICG mapping / physical gated clock | Not implemented |
