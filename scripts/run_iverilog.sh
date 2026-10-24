@@ -7,7 +7,7 @@ if ! command -v iverilog >/dev/null 2>&1 || ! command -v vvp >/dev/null 2>&1; th
 fi
 BUILD_DIR="$(mktemp -d)"
 trap 'rm -rf "$BUILD_DIR"' EXIT
-echo "[1/2] Matrix tile"
+echo "[1/3] Matrix tile"
 iverilog -g2012 -Wall -s tb_mac_tile_2x2 -o "$BUILD_DIR/tb_mac" "$ROOT/rtl/mac_tile_2x2.sv" "$ROOT/tb/tb_mac_tile_2x2.sv"
 vvp "$BUILD_DIR/tb_mac"
 echo "[2/3] Power manager"
