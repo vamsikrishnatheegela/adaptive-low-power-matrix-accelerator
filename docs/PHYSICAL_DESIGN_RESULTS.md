@@ -59,3 +59,10 @@ openlane \
 ```
 
 Adjust `--pdk-root` to match the local PDK installation. The run directory and generated reports are local build artifacts and should not be committed wholesale.
+
+
+## Follow-up constraint setup (added after the recorded run)
+
+The repository now includes `constraints/power_aware_matrix_accelerator.sdc`, referenced by both `PNR_SDC_FILE` and `SIGNOFF_SDC_FILE` in `openlane_config.json`. It defines a 20 ns clock, 0.2 ns clock uncertainty, 2 ns maximum input/output delay budgets, 0.2 ns minimum input delay, and a nominal output load.
+
+These are **initial integration assumptions**, not values measured from an external interface specification. The metrics above are from the earlier run, which used fallback constraints; they must not be attributed to this new SDC. Rerun OpenLane and inspect the constraint-check and timing reports before interpreting timing slack. If the run flags unsupported SDC syntax or unconstrained ports, fix those findings rather than treating the SDC file's presence as proof of complete timing coverage.
