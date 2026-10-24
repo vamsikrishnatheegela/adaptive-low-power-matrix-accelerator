@@ -28,7 +28,7 @@ module tb_matrix_accelerator;
         check_condition(c00==19 && c01==22 && c10==43 && c11==50,
                         "matrix accelerator result mismatch");
         check_condition(busy,"busy should remain asserted with done");
-        @(negedge clk);
+        @(posedge clk); #1;
         check_condition(!done && !busy,"wrapper should return to idle after done pulse");
         if (errors==0) begin
             $display("PASS: tb_matrix_accelerator");
