@@ -1,5 +1,7 @@
 # Adaptive Low-Power Matrix-Multiplication Accelerator
 
+[![RTL regression](https://github.com/vamsikrishnatheegela/adaptive-low-power-matrix-accelerator/actions/workflows/rtl-regression.yml/badge.svg)](https://github.com/vamsikrishnatheegela/adaptive-low-power-matrix-accelerator/actions/workflows/rtl-regression.yml)
+
 A staged SystemVerilog portfolio project for a signed INT8 matrix-multiplication tile and adaptive low-power control. This is a baseline scaffold; physical clock gating, power gating, DVFS hardware, and RTL-to-GDSII results are **not yet implemented or measured**.
 
 ## Contents
@@ -39,9 +41,9 @@ This is a small verification-friendly starting point, not a production accelerat
 | Feature | Status |
 |---|---|
 | Signed INT8 2×2 tile | Baseline RTL included |
-| Datapath testbench | Included; run regression |
-| Power-manager FSM | Baseline RTL included; run regression |
-| ICG mapping / physical gated clock | Not implemented |
+| Datapath testbench | Passing in GitHub Actions (103 vectors) |
+| Power-manager FSM | Baseline RTL and testbench passing in CI |
+| Sequential start/busy/done wrapper | RTL and testbench passing in CI |\n| ICG mapping / physical gated clock | Not implemented |
 | UPF, switches, isolation, retention | Not implemented |
 | Physical DVFS | Not implemented |
 | Synthesis / RTL-to-GDSII PPA | Not measured |
