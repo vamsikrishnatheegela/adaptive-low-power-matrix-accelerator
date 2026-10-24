@@ -5,10 +5,10 @@
 - [x] Power-manager FSM scaffold and testbench
 - [x] Reproducible Icarus Verilog script
 - [ ] Run regression locally and fix all failures
-- [ ] Add CI regression
+- [x] Add CI regression (GitHub Actions passed on current RTL revision)
 
 ## Stage 2 — Integration and verification
-- [ ] Add sequential wrapper with start/ready/busy/done
+- [x] Add sequential wrapper with start/busy/done and passing directed test
 - [ ] Add independent reference scoreboard
 - [ ] Add quiesce/idle acknowledgement and defined reset behavior
 - [ ] Add assertions and functional coverage
