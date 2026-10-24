@@ -48,6 +48,8 @@ This is a small verification-friendly starting point, not a production accelerat
 | ICG mapping / physical gated clock | Not implemented; enable intent only |
 | UPF, switches, isolation, retention | Not implemented; power control is a model |
 | Physical DVFS | Not implemented; request/ack control-plane model only |
-| Generic synthesis | Completed with Yosys; generic cell count is not physical area |\n| OpenLane RTL-to-GDSII | Flow completed; GDS/DEF/LEF generated, LVS and DRC passed |\n| Physical signoff | Open: antenna, slew/fanout/capacitance issues and dedicated signoff SDC remain |
+| Generic synthesis | Completed with Yosys; generic cell count is not physical area |
+| OpenLane RTL-to-GDSII | Flow completed; GDS/DEF/LEF generated, LVS and DRC passed |
+| Physical signoff | Open: antenna and electrical-rule checks must be clean in a rerun with the current SDC/configuration |
 
 See [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md), [results template](docs/RESULTS_TEMPLATE.md), and [physical-design results](docs/PHYSICAL_DESIGN_RESULTS.md).
