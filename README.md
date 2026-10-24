@@ -4,8 +4,9 @@ A staged SystemVerilog portfolio project for a signed INT8 matrix-multiplication
 
 ## Contents
 - `rtl/mac_tile_2x2.sv`: combinational signed INT8 2×2 matrix multiply.
+- `rtl/matrix_accelerator.sv`: sequential start/busy/done wrapper around the tile.
 - `rtl/adaptive_power_manager.sv`: power-state and operating-point control-plane FSM.
-- `tb/`: self-checking testbenches.
+- `tb/`: self-checking testbenches for arithmetic, control sequencing, and the sequential wrapper.
 - `scripts/run_iverilog.sh`: reproducible simulation regression.
 - `docs/`: architecture, roadmap, and results template.
 
