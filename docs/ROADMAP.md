@@ -10,9 +10,11 @@
 ## Stage 2 — Integration and verification
 - [x] Add sequential wrapper with start/busy/done and passing directed test
 - [x] Add independent signed-integer reference scoreboard (502 vectors)
-- [ ] Add quiesce/idle acknowledgement and defined reset behavior
+- [x] Add a power-aware top-level integration model with transaction admission and deferred sleep
+- [x] Add integration test for active-work sleep deferral and wake-up sequencing
+- [ ] Add explicit quiesce/idle acknowledgement and stronger reset behavior
 - [ ] Add assertions and functional coverage
-- [ ] Test wake-up and operating-point changes under busy/idle conditions
+- [x] Test wake-up and operating-point changes in integrated busy/idle scenarios
 
 ## Stage 3 — Low-power implementation
 - [ ] Integrate ICG cell or supported clock-gating mapping
