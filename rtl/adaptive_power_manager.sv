@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+`timescale 1ns/1ps
 // Control-plane model only; physical ICG, power switches, and DVFS hardware
 // must be supplied by the target technology and implementation flow.
 module adaptive_power_manager #(
