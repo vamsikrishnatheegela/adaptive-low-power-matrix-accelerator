@@ -6,7 +6,7 @@ module mac_tile_2x2 (
 );
     logic signed [15:0] p00, p01, p02, p03;
     logic signed [15:0] p10, p11, p12, p13;
-    always_comb begin
+    always @* begin
         p00 = a00 * b00; p01 = a01 * b10;
         p02 = a00 * b01; p03 = a01 * b11;
         p10 = a10 * b00; p11 = a11 * b10;
