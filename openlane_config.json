@@ -1,0 +1,11 @@
+{
+  "DESIGN_NAME": "power_aware_matrix_accelerator",
+  "VERILOG_FILES": [
+    "dir::rtl/mac_tile_2x2.sv",
+    "dir::rtl/adaptive_power_manager.sv",
+    "dir::rtl/matrix_accelerator.sv",
+    "dir::rtl/power_aware_matrix_accelerator.sv"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 20
+}
