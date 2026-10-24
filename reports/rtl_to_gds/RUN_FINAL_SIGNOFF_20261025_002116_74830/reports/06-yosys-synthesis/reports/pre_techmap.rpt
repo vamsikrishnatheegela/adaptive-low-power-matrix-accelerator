@@ -1,0 +1,41 @@
+126. Printing statistics.
+
+=== power_aware_matrix_accelerator ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     4162 wires
+     4418 wire bits
+       43 public wires
+      298 public wire bits
+       28 ports
+      159 port bits
+     4335 cells
+     1350   $_ANDNOT_
+      299   $_AND_
+       68   $_DFFE_PN0N_
+       70   $_DFFE_PN0P_
+        2   $_DFFE_PN1P_
+        4   $_MUX_
+      233   $_NAND_
+      103   $_NOR_
+       84   $_NOT_
+      138   $_ORNOT_
+      554   $_OR_
+      162   $_XNOR_
+     1268   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0N_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_DFFE_PN1P_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+

@@ -1,0 +1,21 @@
+
+18. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\matrix_accelerator.\busy' from process `\matrix_accelerator.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:23$27'.
+No latch inferred for signal `\matrix_accelerator.\done' from process `\matrix_accelerator.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:23$27'.
+No latch inferred for signal `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.\power_domain_on' from process `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24$8'.
+No latch inferred for signal `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.\dvfs_request' from process `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24$8'.
+No latch inferred for signal `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.\compute_enable' from process `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24$8'.
+No latch inferred for signal `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.\state_debug' from process `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24$8'.
+No latch inferred for signal `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.\next_state' from process `$paramod\adaptive_power_manager\IDLE_COUNT_WIDTH=s32'00000000000000000000000000001000.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24$8'.
+No latch inferred for signal `\mac_tile_2x2.\c00' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\c01' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\c10' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\c11' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\p00' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\p01' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\p02' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\p03' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\p10' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\p11' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\p12' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.
+No latch inferred for signal `\mac_tile_2x2.\p13' from process `\mac_tile_2x2.$proc$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:10$32'.

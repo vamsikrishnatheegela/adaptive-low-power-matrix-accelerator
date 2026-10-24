@@ -1,0 +1,3830 @@
+{
+  "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+  "modules": {
+    "power_aware_matrix_accelerator": {
+      "attributes": {
+        "hdlname": "power_aware_matrix_accelerator",
+        "dynports": "00000000000000000000000000000001",
+        "top": "00000000000000000000000000000001",
+        "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:5.1-52.10"
+      },
+      "parameter_default_values": {
+        "IDLE_COUNT_WIDTH": "00000000000000000000000000001000"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "reset_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "start": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "a00": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ]
+        },
+        "a01": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 13, 14, 15, 16, 17, 18, 19, 20 ]
+        },
+        "a10": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 21, 22, 23, 24, 25, 26, 27, 28 ]
+        },
+        "a11": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 29, 30, 31, 32, 33, 34, 35, 36 ]
+        },
+        "b00": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 37, 38, 39, 40, 41, 42, 43, 44 ]
+        },
+        "b01": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 45, 46, 47, 48, 49, 50, 51, 52 ]
+        },
+        "b10": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 53, 54, 55, 56, 57, 58, 59, 60 ]
+        },
+        "b11": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 61, 62, 63, 64, 65, 66, 67, 68 ]
+        },
+        "sleep_request": {
+          "direction": "input",
+          "bits": [ 69 ]
+        },
+        "wake_request": {
+          "direction": "input",
+          "bits": [ 70 ]
+        },
+        "idle_count": {
+          "direction": "input",
+          "bits": [ 71, 72, 73, 74, 75, 76, 77, 78 ]
+        },
+        "requested_operating_point": {
+          "direction": "input",
+          "bits": [ 79, 80 ]
+        },
+        "power_good": {
+          "direction": "input",
+          "bits": [ 81 ]
+        },
+        "dvfs_ack": {
+          "direction": "input",
+          "bits": [ 82 ]
+        },
+        "c00": {
+          "direction": "output",
+          "signed": 1,
+          "bits": [ 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ]
+        },
+        "c01": {
+          "direction": "output",
+          "signed": 1,
+          "bits": [ 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ]
+        },
+        "c10": {
+          "direction": "output",
+          "signed": 1,
+          "bits": [ 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133 ]
+        },
+        "c11": {
+          "direction": "output",
+          "signed": 1,
+          "bits": [ 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ]
+        },
+        "busy": {
+          "direction": "output",
+          "bits": [ 151 ]
+        },
+        "done": {
+          "direction": "output",
+          "bits": [ 152 ]
+        },
+        "ready": {
+          "direction": "output",
+          "bits": [ 153 ]
+        },
+        "power_domain_on": {
+          "direction": "output",
+          "bits": [ 154 ]
+        },
+        "dvfs_request": {
+          "direction": "output",
+          "bits": [ 155 ]
+        },
+        "operating_point": {
+          "direction": "output",
+          "bits": [ 156, 157 ]
+        },
+        "power_state_debug": {
+          "direction": "output",
+          "bits": [ 158, 159, 160 ]
+        }
+      },
+      "cells": {
+        "$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:29$3": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:29.21-29.46"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "Y": [ 161 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:25$29": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:25.17-25.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "B": [ "0", "1" ],
+            "Y": [ 152 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$ne$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:24$28": {
+          "hide_name": 1,
+          "type": "$reduce_bool",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:24.17-24.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 151 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$197": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180 ],
+            "Q": [ 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$202": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197 ],
+            "Q": [ 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$207": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214 ],
+            "Q": [ 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$212": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231 ],
+            "Q": [ 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$217": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 232, 233 ],
+            "Q": [ 162, 163 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$222": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 234, 235, 236, 237, 238, 239, 240, 241 ],
+            "Q": [ 242, 243, 244, 245, 246, 247, 248, 249 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$227": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 250, 251, 252, 253, 254, 255, 256, 257 ],
+            "Q": [ 258, 259, 260, 261, 262, 263, 264, 265 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$232": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 266, 267, 268, 269, 270, 271, 272, 273 ],
+            "Q": [ 274, 275, 276, 277, 278, 279, 280, 281 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$237": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 282, 283, 284, 285, 286, 287, 288, 289 ],
+            "Q": [ 290, 291, 292, 293, 294, 295, 296, 297 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$242": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 298, 299, 300, 301, 302, 303, 304, 305 ],
+            "Q": [ 306, 307, 308, 309, 310, 311, 312, 313 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$247": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 314, 315, 316, 317, 318, 319, 320, 321 ],
+            "Q": [ 322, 323, 324, 325, 326, 327, 328, 329 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$252": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 330, 331, 332, 333, 334, 335, 336, 337 ],
+            "Q": [ 338, 339, 340, 341, 342, 343, 344, 345 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procdff$257": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 346, 347, 348, 349, 350, 351, 352, 353 ],
+            "Q": [ 354, 355, 356, 357, 358, 359, 360, 361 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$100_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 362 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$103": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000010",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0" ],
+            "B": [ "0", "1", 363, 364 ],
+            "S": [ 365, 366 ],
+            "Y": [ 232, 233 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$104_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "B": [ "1", "0" ],
+            "Y": [ 365 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$105": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "B": [ "1", "0" ],
+            "S": [ 367 ],
+            "Y": [ 363, 364 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$107_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 366 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$110": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ],
+            "B": [ 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384 ],
+            "S": [ 385 ],
+            "Y": [ 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$111_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "B": [ "1", "0" ],
+            "Y": [ 385 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$114": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133 ],
+            "B": [ 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402 ],
+            "S": [ 403 ],
+            "Y": [ 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$115_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "B": [ "1", "0" ],
+            "Y": [ 403 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$118": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ],
+            "B": [ 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420 ],
+            "S": [ 421 ],
+            "Y": [ 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$119_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "B": [ "1", "0" ],
+            "Y": [ 421 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$122": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ],
+            "B": [ 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438 ],
+            "S": [ 439 ],
+            "Y": [ 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$123_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:40.20-40.20|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "B": [ "1", "0" ],
+            "Y": [ 439 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$48": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 354, 355, 356, 357, 358, 359, 360, 361 ],
+            "B": [ 61, 62, 63, 64, 65, 66, 67, 68 ],
+            "S": [ 367 ],
+            "Y": [ 440, 441, 442, 443, 444, 445, 446, 447 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$50": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 354, 355, 356, 357, 358, 359, 360, 361 ],
+            "B": [ 440, 441, 442, 443, 444, 445, 446, 447 ],
+            "S": [ 448 ],
+            "Y": [ 346, 347, 348, 349, 350, 351, 352, 353 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$51_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 448 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$55": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 338, 339, 340, 341, 342, 343, 344, 345 ],
+            "B": [ 53, 54, 55, 56, 57, 58, 59, 60 ],
+            "S": [ 367 ],
+            "Y": [ 449, 450, 451, 452, 453, 454, 455, 456 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$57": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 338, 339, 340, 341, 342, 343, 344, 345 ],
+            "B": [ 449, 450, 451, 452, 453, 454, 455, 456 ],
+            "S": [ 457 ],
+            "Y": [ 330, 331, 332, 333, 334, 335, 336, 337 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$58_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 457 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$62": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 322, 323, 324, 325, 326, 327, 328, 329 ],
+            "B": [ 45, 46, 47, 48, 49, 50, 51, 52 ],
+            "S": [ 367 ],
+            "Y": [ 458, 459, 460, 461, 462, 463, 464, 465 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$64": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 322, 323, 324, 325, 326, 327, 328, 329 ],
+            "B": [ 458, 459, 460, 461, 462, 463, 464, 465 ],
+            "S": [ 466 ],
+            "Y": [ 314, 315, 316, 317, 318, 319, 320, 321 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$65_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 466 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$69": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 306, 307, 308, 309, 310, 311, 312, 313 ],
+            "B": [ 37, 38, 39, 40, 41, 42, 43, 44 ],
+            "S": [ 367 ],
+            "Y": [ 467, 468, 469, 470, 471, 472, 473, 474 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$71": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 306, 307, 308, 309, 310, 311, 312, 313 ],
+            "B": [ 467, 468, 469, 470, 471, 472, 473, 474 ],
+            "S": [ 475 ],
+            "Y": [ 298, 299, 300, 301, 302, 303, 304, 305 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$72_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 475 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$76": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 290, 291, 292, 293, 294, 295, 296, 297 ],
+            "B": [ 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "S": [ 367 ],
+            "Y": [ 476, 477, 478, 479, 480, 481, 482, 483 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$78": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 290, 291, 292, 293, 294, 295, 296, 297 ],
+            "B": [ 476, 477, 478, 479, 480, 481, 482, 483 ],
+            "S": [ 484 ],
+            "Y": [ 282, 283, 284, 285, 286, 287, 288, 289 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$79_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 484 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$83": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 274, 275, 276, 277, 278, 279, 280, 281 ],
+            "B": [ 21, 22, 23, 24, 25, 26, 27, 28 ],
+            "S": [ 367 ],
+            "Y": [ 485, 486, 487, 488, 489, 490, 491, 492 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$85": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 274, 275, 276, 277, 278, 279, 280, 281 ],
+            "B": [ 485, 486, 487, 488, 489, 490, 491, 492 ],
+            "S": [ 493 ],
+            "Y": [ 266, 267, 268, 269, 270, 271, 272, 273 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$86_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 493 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$90": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 258, 259, 260, 261, 262, 263, 264, 265 ],
+            "B": [ 13, 14, 15, 16, 17, 18, 19, 20 ],
+            "S": [ 367 ],
+            "Y": [ 494, 495, 496, 497, 498, 499, 500, 501 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$92": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 258, 259, 260, 261, 262, 263, 264, 265 ],
+            "B": [ 494, 495, 496, 497, 498, 499, 500, 501 ],
+            "S": [ 502 ],
+            "Y": [ 250, 251, 252, 253, 254, 255, 256, 257 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$93_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162, 163 ],
+            "Y": [ 502 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$97": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.30-36.35|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:36.26-40.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 242, 243, 244, 245, 246, 247, 248, 249 ],
+            "B": [ 5, 6, 7, 8, 9, 10, 11, 12 ],
+            "S": [ 367 ],
+            "Y": [ 503, 504, 505, 506, 507, 508, 509, 510 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$99": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.25-35.25|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:35.13-48.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 242, 243, 244, 245, 246, 247, 248, 249 ],
+            "B": [ 503, 504, 505, 506, 507, 508, 509, 510 ],
+            "S": [ 362 ],
+            "Y": [ 234, 235, 236, 237, 238, 239, 240, 241 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$add$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:15$41": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000010001",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000010001",
+            "Y_WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:15.15-15.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 526 ],
+            "B": [ 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 542 ],
+            "Y": [ 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$add$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:16$42": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000010001",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000010001",
+            "Y_WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:16.15-16.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 558 ],
+            "B": [ 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 574 ],
+            "Y": [ 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$add$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:17$43": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000010001",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000010001",
+            "Y_WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:17.15-17.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 590 ],
+            "B": [ 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 606 ],
+            "Y": [ 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$add$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:18$44": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000010001",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000010001",
+            "Y_WIDTH": "00000000000000000000000000010001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:18.15-18.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 622 ],
+            "B": [ 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 638 ],
+            "Y": [ 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$mul$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:11$33": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:11.15-11.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 242, 243, 244, 245, 246, 247, 248, 249 ],
+            "B": [ 306, 307, 308, 309, 310, 311, 312, 313 ],
+            "Y": [ 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$mul$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:11$34": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:11.32-11.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 258, 259, 260, 261, 262, 263, 264, 265 ],
+            "B": [ 338, 339, 340, 341, 342, 343, 344, 345 ],
+            "Y": [ 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$mul$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:12$35": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:12.15-12.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 242, 243, 244, 245, 246, 247, 248, 249 ],
+            "B": [ 322, 323, 324, 325, 326, 327, 328, 329 ],
+            "Y": [ 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$mul$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:12$36": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:12.32-12.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 258, 259, 260, 261, 262, 263, 264, 265 ],
+            "B": [ 354, 355, 356, 357, 358, 359, 360, 361 ],
+            "Y": [ 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$mul$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:13$37": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:13.15-13.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 274, 275, 276, 277, 278, 279, 280, 281 ],
+            "B": [ 306, 307, 308, 309, 310, 311, 312, 313 ],
+            "Y": [ 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$mul$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:13$38": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:13.32-13.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 290, 291, 292, 293, 294, 295, 296, 297 ],
+            "B": [ 338, 339, 340, 341, 342, 343, 344, 345 ],
+            "Y": [ 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$mul$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:14$39": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:14.15-14.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 274, 275, 276, 277, 278, 279, 280, 281 ],
+            "B": [ 322, 323, 324, 325, 326, 327, 328, 329 ],
+            "Y": [ 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622 ]
+          }
+        },
+        "$flatten\\u_matrix_accelerator.\\tile.$mul$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:14$40": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:14.32-14.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 290, 291, 292, 293, 294, 295, 296, 297 ],
+            "B": [ 354, 355, 356, 357, 358, 359, 360, 361 ],
+            "Y": [ 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638 ]
+          }
+        },
+        "$flatten\\u_power_manager.$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62$18": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.17-62.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "Y": [ 639 ]
+          }
+        },
+        "$flatten\\u_power_manager.$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65$23": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65.17-65.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 640 ]
+          }
+        },
+        "$flatten\\u_power_manager.$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67$25": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67.17-67.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "1", "0" ],
+            "Y": [ 641 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35$11": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.21-35.85"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 642 ],
+            "B": [ 643 ],
+            "Y": [ 644 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37$13": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.26-37.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 69 ],
+            "B": [ 645 ],
+            "Y": [ 646 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37$15": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.26-37.81"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 646 ],
+            "B": [ 647 ],
+            "Y": [ 648 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62$20": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.17-62.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 639 ],
+            "B": [ 649 ],
+            "Y": [ 650 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62$22": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.17-63.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 650 ],
+            "B": [ 651 ],
+            "Y": [ 652 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65$24": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65.17-65.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 640 ],
+            "B": [ 82 ],
+            "Y": [ 653 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67$26": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67.17-67.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 641 ],
+            "B": [ 81 ],
+            "Y": [ 654 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35$9": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.21-35.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 151 ],
+            "Y": [ 642 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37$12": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.43-37.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 151 ],
+            "Y": [ 645 ]
+          }
+        },
+        "$flatten\\u_power_manager.$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62$19": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.39-62.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 151 ],
+            "Y": [ 649 ]
+          }
+        },
+        "$flatten\\u_power_manager.$ne$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35$10": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.41-35.85"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 79, 80 ],
+            "B": [ 156, 157 ],
+            "Y": [ 643 ]
+          }
+        },
+        "$flatten\\u_power_manager.$ne$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37$14": {
+          "hide_name": 1,
+          "type": "$reduce_bool",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.64-37.80"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 71, 72, 73, 74, 75, 76, 77, 78 ],
+            "Y": [ 647 ]
+          }
+        },
+        "$flatten\\u_power_manager.$ne$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:63$21": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:63.17-63.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 79, 80 ],
+            "B": [ 156, 157 ],
+            "Y": [ 651 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procdff$262": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "01",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:55.5-70.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 655, 656 ],
+            "Q": [ 156, 157 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procdff$267": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:55.5-70.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 657, 658, 659 ],
+            "Q": [ 158, 159, 160 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procdff$272": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "01",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:55.5-70.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 660, 661 ],
+            "Q": [ 662, 663 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$124": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.17-63.61|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.13-64.69"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 662, 663 ],
+            "B": [ 79, 80 ],
+            "S": [ 652 ],
+            "Y": [ 664, 665 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$126": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67.17-67.52|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67.13-68.69"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 664, 665 ],
+            "B": [ 79, 80 ],
+            "S": [ 654 ],
+            "Y": [ 660, 661 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$128": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65.17-65.50|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65.13-66.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 156, 157 ],
+            "B": [ 662, 663 ],
+            "S": [ 653 ],
+            "Y": [ 655, 656 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$132": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:49.21-49.31|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:49.17-49.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 81 ],
+            "Y": [ 666, 667, 668 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$134": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:47.16-47.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ 666, 667, 668 ],
+            "S": [ 669 ],
+            "Y": [ 670, 671, 672 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$135_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:47.16-47.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "1", "0" ],
+            "Y": [ 669 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$139": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:46.21-46.33|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:46.17-46.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "1", "0" ],
+            "S": [ 70 ],
+            "Y": [ 673, 674, 675 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$141": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:43.16-43.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ 673, 674, 675 ],
+            "S": [ 676 ],
+            "Y": [ 677, 678, 679 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$142_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:43.16-43.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "0", "1", "0" ],
+            "Y": [ 676 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$147": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:42.21-42.29|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:42.17-42.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 82 ],
+            "Y": [ 680, 681, 682 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$149": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:39.16-39.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ 680, 681, 682 ],
+            "S": [ 683 ],
+            "Y": [ 684, 685, 686 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$150_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:39.16-39.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 683 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$156": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.26-37.81|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.22-38.47"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "0", "1", "0" ],
+            "S": [ 648 ],
+            "Y": [ 687, 688, 689 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$159": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.21-35.85|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.17-38.47"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 687, 688, 689 ],
+            "B": [ "x", "x", "x" ],
+            "S": [ 644 ],
+            "Y": [ 690, 691, 692 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$161": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.21-30.21|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ 690, 691, 692 ],
+            "S": [ 693 ],
+            "Y": [ 694, 695, 696 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$162_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.21-30.21|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "Y": [ 693 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$168": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.21-35.85|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.17-38.47"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 694, 695, 696 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 644 ],
+            "Y": [ 697, 698, 699 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$170": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.21-30.21|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ 697, 698, 699 ],
+            "S": [ 700 ],
+            "Y": [ 701, 702, 703 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$171_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.21-30.21|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "Y": [ 700 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$173": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000100",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:47.16-47.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0" ],
+            "B": [ 670, 671, 672, 677, 678, 679, 684, 685, 686, 701, 702, 703 ],
+            "S": [ 704, 705, 706, 707 ],
+            "Y": [ 657, 658, 659 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$174_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:47.16-47.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "1", "0" ],
+            "Y": [ 704 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$175_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:43.16-43.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "0", "1", "0" ],
+            "Y": [ 705 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$176_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:39.16-39.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 706 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$177_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.21-30.21|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "Y": [ 707 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$187": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:39.16-39.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 708 ],
+            "Y": [ 155 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$188_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:39.16-39.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 708 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$191": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:43.16-43.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ "0" ],
+            "S": [ 709 ],
+            "Y": [ 154 ]
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$192_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:43.16-43.16|/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:30.9-52.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160 ],
+            "B": [ "0", "1", "0" ],
+            "Y": [ 709 ]
+          }
+        },
+        "$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28$2": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28.20-28.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 154 ],
+            "B": [ 710 ],
+            "Y": [ 711 ]
+          }
+        },
+        "$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28$4": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28.20-29.47"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 711 ],
+            "B": [ 161 ],
+            "Y": [ 712 ]
+          }
+        },
+        "$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28$6": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28.20-29.56"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 712 ],
+            "B": [ 713 ],
+            "Y": [ 153 ]
+          }
+        },
+        "$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:30$7": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:30.29-30.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "B": [ 153 ],
+            "Y": [ 367 ]
+          }
+        },
+        "$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28$1": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28.39-28.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 155 ],
+            "Y": [ 710 ]
+          }
+        },
+        "$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:29$5": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:29.51-29.56"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 151 ],
+            "Y": [ 713 ]
+          }
+        }
+      },
+      "netnames": {
+        "$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:29$3_Y": {
+          "hide_name": 1,
+          "bits": [ 161 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:29.21-29.46"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\ar00[7:0]": {
+          "hide_name": 1,
+          "bits": [ 234, 235, 236, 237, 238, 239, 240, 241 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\ar01[7:0]": {
+          "hide_name": 1,
+          "bits": [ 250, 251, 252, 253, 254, 255, 256, 257 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\ar10[7:0]": {
+          "hide_name": 1,
+          "bits": [ 266, 267, 268, 269, 270, 271, 272, 273 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\ar11[7:0]": {
+          "hide_name": 1,
+          "bits": [ 282, 283, 284, 285, 286, 287, 288, 289 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\br00[7:0]": {
+          "hide_name": 1,
+          "bits": [ 298, 299, 300, 301, 302, 303, 304, 305 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\br01[7:0]": {
+          "hide_name": 1,
+          "bits": [ 314, 315, 316, 317, 318, 319, 320, 321 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\br10[7:0]": {
+          "hide_name": 1,
+          "bits": [ 330, 331, 332, 333, 334, 335, 336, 337 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\br11[7:0]": {
+          "hide_name": 1,
+          "bits": [ 346, 347, 348, 349, 350, 351, 352, 353 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\c00[16:0]": {
+          "hide_name": 1,
+          "bits": [ 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\c01[16:0]": {
+          "hide_name": 1,
+          "bits": [ 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\c10[16:0]": {
+          "hide_name": 1,
+          "bits": [ 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\c11[16:0]": {
+          "hide_name": 1,
+          "bits": [ 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$0\\state[1:0]": {
+          "hide_name": 1,
+          "bits": [ 232, 233 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:28.5-50.8"
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$100_CMP": {
+          "hide_name": 1,
+          "bits": [ 362 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$104_CMP": {
+          "hide_name": 1,
+          "bits": [ 365 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$105_Y": {
+          "hide_name": 1,
+          "bits": [ 363, 364 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$107_CMP": {
+          "hide_name": 1,
+          "bits": [ 366 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$111_CMP": {
+          "hide_name": 1,
+          "bits": [ 385 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$115_CMP": {
+          "hide_name": 1,
+          "bits": [ 403 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$119_CMP": {
+          "hide_name": 1,
+          "bits": [ 421 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$123_CMP": {
+          "hide_name": 1,
+          "bits": [ 439 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$48_Y": {
+          "hide_name": 1,
+          "bits": [ 440, 441, 442, 443, 444, 445, 446, 447 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$51_CMP": {
+          "hide_name": 1,
+          "bits": [ 448 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$55_Y": {
+          "hide_name": 1,
+          "bits": [ 449, 450, 451, 452, 453, 454, 455, 456 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$58_CMP": {
+          "hide_name": 1,
+          "bits": [ 457 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$62_Y": {
+          "hide_name": 1,
+          "bits": [ 458, 459, 460, 461, 462, 463, 464, 465 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$65_CMP": {
+          "hide_name": 1,
+          "bits": [ 466 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$69_Y": {
+          "hide_name": 1,
+          "bits": [ 467, 468, 469, 470, 471, 472, 473, 474 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$72_CMP": {
+          "hide_name": 1,
+          "bits": [ 475 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$76_Y": {
+          "hide_name": 1,
+          "bits": [ 476, 477, 478, 479, 480, 481, 482, 483 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$79_CMP": {
+          "hide_name": 1,
+          "bits": [ 484 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$83_Y": {
+          "hide_name": 1,
+          "bits": [ 485, 486, 487, 488, 489, 490, 491, 492 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$86_CMP": {
+          "hide_name": 1,
+          "bits": [ 493 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$90_Y": {
+          "hide_name": 1,
+          "bits": [ 494, 495, 496, 497, 498, 499, 500, 501 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$93_CMP": {
+          "hide_name": 1,
+          "bits": [ 502 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_matrix_accelerator.$procmux$97_Y": {
+          "hide_name": 1,
+          "bits": [ 503, 504, 505, 506, 507, 508, 509, 510 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$0\\operating_point[1:0]": {
+          "hide_name": 1,
+          "bits": [ 655, 656 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:55.5-70.8"
+          }
+        },
+        "$flatten\\u_power_manager.$0\\target_operating_point[1:0]": {
+          "hide_name": 1,
+          "bits": [ 660, 661 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:55.5-70.8"
+          }
+        },
+        "$flatten\\u_power_manager.$2\\next_state[2:0]": {
+          "hide_name": 1,
+          "bits": [ 701, 702, 703 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24.16-24.16"
+          }
+        },
+        "$flatten\\u_power_manager.$3\\next_state[2:0]": {
+          "hide_name": 1,
+          "bits": [ 694, 695, 696 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24.16-24.16"
+          }
+        },
+        "$flatten\\u_power_manager.$4\\next_state[2:0]": {
+          "hide_name": 1,
+          "bits": [ 684, 685, 686 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24.16-24.16"
+          }
+        },
+        "$flatten\\u_power_manager.$5\\next_state[2:0]": {
+          "hide_name": 1,
+          "bits": [ 677, 678, 679 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24.16-24.16"
+          }
+        },
+        "$flatten\\u_power_manager.$6\\next_state[2:0]": {
+          "hide_name": 1,
+          "bits": [ 670, 671, 672 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:24.16-24.16"
+          }
+        },
+        "$flatten\\u_power_manager.$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62$18_Y": {
+          "hide_name": 1,
+          "bits": [ 639 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.17-62.35"
+          }
+        },
+        "$flatten\\u_power_manager.$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65$23_Y": {
+          "hide_name": 1,
+          "bits": [ 640 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65.17-65.38"
+          }
+        },
+        "$flatten\\u_power_manager.$eq$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67$25_Y": {
+          "hide_name": 1,
+          "bits": [ 641 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67.17-67.38"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35$11_Y": {
+          "hide_name": 1,
+          "bits": [ 644 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.21-35.85"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37$13_Y": {
+          "hide_name": 1,
+          "bits": [ 646 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.26-37.59"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37$15_Y": {
+          "hide_name": 1,
+          "bits": [ 648 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.26-37.81"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62$20_Y": {
+          "hide_name": 1,
+          "bits": [ 650 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.17-62.55"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62$22_Y": {
+          "hide_name": 1,
+          "bits": [ 652 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.17-63.61"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65$24_Y": {
+          "hide_name": 1,
+          "bits": [ 653 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:65.17-65.50"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67$26_Y": {
+          "hide_name": 1,
+          "bits": [ 654 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:67.17-67.52"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35$9_Y": {
+          "hide_name": 1,
+          "bits": [ 642 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.21-35.37"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37$12_Y": {
+          "hide_name": 1,
+          "bits": [ 645 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.43-37.59"
+          }
+        },
+        "$flatten\\u_power_manager.$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62$19_Y": {
+          "hide_name": 1,
+          "bits": [ 649 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:62.39-62.55"
+          }
+        },
+        "$flatten\\u_power_manager.$ne$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35$10_Y": {
+          "hide_name": 1,
+          "bits": [ 643 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:35.41-35.85"
+          }
+        },
+        "$flatten\\u_power_manager.$ne$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37$14_Y": {
+          "hide_name": 1,
+          "bits": [ 647 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:37.64-37.80"
+          }
+        },
+        "$flatten\\u_power_manager.$ne$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:63$21_Y": {
+          "hide_name": 1,
+          "bits": [ 651 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:63.17-63.61"
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$124_Y": {
+          "hide_name": 1,
+          "bits": [ 664, 665 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$132_Y": {
+          "hide_name": 1,
+          "bits": [ 666, 667, 668 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$135_CMP": {
+          "hide_name": 1,
+          "bits": [ 669 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$139_Y": {
+          "hide_name": 1,
+          "bits": [ 673, 674, 675 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$142_CMP": {
+          "hide_name": 1,
+          "bits": [ 676 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$147_Y": {
+          "hide_name": 1,
+          "bits": [ 680, 681, 682 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$150_CMP": {
+          "hide_name": 1,
+          "bits": [ 683 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$156_Y": {
+          "hide_name": 1,
+          "bits": [ 687, 688, 689 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$159_Y": {
+          "hide_name": 1,
+          "bits": [ 690, 691, 692 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$162_CMP": {
+          "hide_name": 1,
+          "bits": [ 693 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$168_Y": {
+          "hide_name": 1,
+          "bits": [ 697, 698, 699 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$171_CMP": {
+          "hide_name": 1,
+          "bits": [ 700 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$174_CMP": {
+          "hide_name": 1,
+          "bits": [ 704 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$175_CMP": {
+          "hide_name": 1,
+          "bits": [ 705 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$176_CMP": {
+          "hide_name": 1,
+          "bits": [ 706 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$177_CMP": {
+          "hide_name": 1,
+          "bits": [ 707 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$188_CMP": {
+          "hide_name": 1,
+          "bits": [ 708 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_power_manager.$procmux$192_CMP": {
+          "hide_name": 1,
+          "bits": [ 709 ],
+          "attributes": {
+          }
+        },
+        "$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28$2_Y": {
+          "hide_name": 1,
+          "bits": [ 711 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28.20-28.52"
+          }
+        },
+        "$logic_and$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28$4_Y": {
+          "hide_name": 1,
+          "bits": [ 712 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28.20-29.47"
+          }
+        },
+        "$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28$1_Y": {
+          "hide_name": 1,
+          "bits": [ 710 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:28.39-28.52"
+          }
+        },
+        "$logic_not$/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:29$5_Y": {
+          "hide_name": 1,
+          "bits": [ 713 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:29.51-29.56"
+          }
+        },
+        "a00": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:10.30-10.33"
+          }
+        },
+        "a01": {
+          "hide_name": 0,
+          "bits": [ 13, 14, 15, 16, 17, 18, 19, 20 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:10.34-10.37"
+          }
+        },
+        "a10": {
+          "hide_name": 0,
+          "bits": [ 21, 22, 23, 24, 25, 26, 27, 28 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:10.38-10.41"
+          }
+        },
+        "a11": {
+          "hide_name": 0,
+          "bits": [ 29, 30, 31, 32, 33, 34, 35, 36 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:10.42-10.45"
+          }
+        },
+        "accepted_start": {
+          "hide_name": 0,
+          "bits": [ 367 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:23.11-23.25"
+          }
+        },
+        "b00": {
+          "hide_name": 0,
+          "bits": [ 37, 38, 39, 40, 41, 42, 43, 44 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:11.30-11.33"
+          }
+        },
+        "b01": {
+          "hide_name": 0,
+          "bits": [ 45, 46, 47, 48, 49, 50, 51, 52 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:11.34-11.37"
+          }
+        },
+        "b10": {
+          "hide_name": 0,
+          "bits": [ 53, 54, 55, 56, 57, 58, 59, 60 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:11.38-11.41"
+          }
+        },
+        "b11": {
+          "hide_name": 0,
+          "bits": [ 61, 62, 63, 64, 65, 66, 67, 68 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:11.42-11.45"
+          }
+        },
+        "busy": {
+          "hide_name": 0,
+          "bits": [ 151 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:17.18-17.22"
+          }
+        },
+        "c00": {
+          "hide_name": 0,
+          "bits": [ 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:16.32-16.35"
+          }
+        },
+        "c01": {
+          "hide_name": 0,
+          "bits": [ 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:16.36-16.39"
+          }
+        },
+        "c10": {
+          "hide_name": 0,
+          "bits": [ 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:16.40-16.43"
+          }
+        },
+        "c11": {
+          "hide_name": 0,
+          "bits": [ 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:16.44-16.47"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:8.17-8.20"
+          }
+        },
+        "done": {
+          "hide_name": 0,
+          "bits": [ 152 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:17.24-17.28"
+          }
+        },
+        "dvfs_ack": {
+          "hide_name": 0,
+          "bits": [ 82 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:15.29-15.37"
+          }
+        },
+        "dvfs_request": {
+          "hide_name": 0,
+          "bits": [ 155 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:18.35-18.47"
+          }
+        },
+        "idle_count": {
+          "hide_name": 0,
+          "bits": [ 71, 72, 73, 74, 75, 76, 77, 78 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:13.40-13.50"
+          }
+        },
+        "operating_point": {
+          "hide_name": 0,
+          "bits": [ 156, 157 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:19.24-19.39"
+          }
+        },
+        "power_domain_on": {
+          "hide_name": 0,
+          "bits": [ 154 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:18.18-18.33"
+          }
+        },
+        "power_good": {
+          "hide_name": 0,
+          "bits": [ 81 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:15.17-15.27"
+          }
+        },
+        "power_state_debug": {
+          "hide_name": 0,
+          "bits": [ 158, 159, 160 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:20.24-20.41"
+          }
+        },
+        "ready": {
+          "hide_name": 0,
+          "bits": [ 153 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:17.30-17.35"
+          }
+        },
+        "requested_operating_point": {
+          "hide_name": 0,
+          "bits": [ 79, 80 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:14.23-14.48"
+          }
+        },
+        "reset_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:8.22-8.29"
+          }
+        },
+        "sleep_request": {
+          "hide_name": 0,
+          "bits": [ 69 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:12.17-12.30"
+          }
+        },
+        "start": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:9.17-9.22"
+          }
+        },
+        "u_matrix_accelerator.ar00": {
+          "hide_name": 0,
+          "bits": [ 242, 243, 244, 245, 246, 247, 248, 249 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator ar00",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:14.24-14.28"
+          }
+        },
+        "u_matrix_accelerator.ar01": {
+          "hide_name": 0,
+          "bits": [ 258, 259, 260, 261, 262, 263, 264, 265 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator ar01",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:14.29-14.33"
+          }
+        },
+        "u_matrix_accelerator.ar10": {
+          "hide_name": 0,
+          "bits": [ 274, 275, 276, 277, 278, 279, 280, 281 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator ar10",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:14.34-14.38"
+          }
+        },
+        "u_matrix_accelerator.ar11": {
+          "hide_name": 0,
+          "bits": [ 290, 291, 292, 293, 294, 295, 296, 297 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator ar11",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:14.39-14.43"
+          }
+        },
+        "u_matrix_accelerator.br00": {
+          "hide_name": 0,
+          "bits": [ 306, 307, 308, 309, 310, 311, 312, 313 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator br00",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:14.44-14.48"
+          }
+        },
+        "u_matrix_accelerator.br01": {
+          "hide_name": 0,
+          "bits": [ 322, 323, 324, 325, 326, 327, 328, 329 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator br01",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:14.49-14.53"
+          }
+        },
+        "u_matrix_accelerator.br10": {
+          "hide_name": 0,
+          "bits": [ 338, 339, 340, 341, 342, 343, 344, 345 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator br10",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:14.54-14.58"
+          }
+        },
+        "u_matrix_accelerator.br11": {
+          "hide_name": 0,
+          "bits": [ 354, 355, 356, 357, 358, 359, 360, 361 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator br11",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:14.59-14.63"
+          }
+        },
+        "u_matrix_accelerator.state": {
+          "hide_name": 0,
+          "bits": [ 162, 163 ],
+          "attributes": {
+            "hdlname": "u_matrix_accelerator state",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/matrix_accelerator.sv:13.17-13.22"
+          }
+        },
+        "u_matrix_accelerator.tile.c00": {
+          "hide_name": 0,
+          "bits": [ 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile c00",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:6.32-6.35"
+          }
+        },
+        "u_matrix_accelerator.tile.c01": {
+          "hide_name": 0,
+          "bits": [ 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile c01",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:6.37-6.40"
+          }
+        },
+        "u_matrix_accelerator.tile.c10": {
+          "hide_name": 0,
+          "bits": [ 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile c10",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:6.42-6.45"
+          }
+        },
+        "u_matrix_accelerator.tile.c11": {
+          "hide_name": 0,
+          "bits": [ 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile c11",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:6.47-6.50"
+          }
+        },
+        "u_matrix_accelerator.tile.p00": {
+          "hide_name": 0,
+          "bits": [ 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile p00",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:8.25-8.28"
+          }
+        },
+        "u_matrix_accelerator.tile.p01": {
+          "hide_name": 0,
+          "bits": [ 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile p01",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:8.30-8.33"
+          }
+        },
+        "u_matrix_accelerator.tile.p02": {
+          "hide_name": 0,
+          "bits": [ 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile p02",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:8.35-8.38"
+          }
+        },
+        "u_matrix_accelerator.tile.p03": {
+          "hide_name": 0,
+          "bits": [ 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile p03",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:8.40-8.43"
+          }
+        },
+        "u_matrix_accelerator.tile.p10": {
+          "hide_name": 0,
+          "bits": [ 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile p10",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:9.25-9.28"
+          }
+        },
+        "u_matrix_accelerator.tile.p11": {
+          "hide_name": 0,
+          "bits": [ 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile p11",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:9.30-9.33"
+          }
+        },
+        "u_matrix_accelerator.tile.p12": {
+          "hide_name": 0,
+          "bits": [ 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile p12",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:9.35-9.38"
+          }
+        },
+        "u_matrix_accelerator.tile.p13": {
+          "hide_name": 0,
+          "bits": [ 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u_matrix_accelerator tile p13",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/mac_tile_2x2.sv:9.40-9.43"
+          }
+        },
+        "u_power_manager.next_state": {
+          "hide_name": 0,
+          "bits": [ 657, 658, 659 ],
+          "attributes": {
+            "hdlname": "u_power_manager next_state",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:21.24-21.34"
+          }
+        },
+        "u_power_manager.target_operating_point": {
+          "hide_name": 0,
+          "bits": [ 662, 663 ],
+          "attributes": {
+            "hdlname": "u_power_manager target_operating_point",
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/adaptive_power_manager.sv:22.17-22.39"
+          }
+        },
+        "wake_request": {
+          "hide_name": 0,
+          "bits": [ 70 ],
+          "attributes": {
+            "src": "/home/vamsikrishna3006/adaptive-low-power-matrix-accelerator/rtl/power_aware_matrix_accelerator.sv:12.32-12.44"
+          }
+        }
+      }
+    }
+  }
+}

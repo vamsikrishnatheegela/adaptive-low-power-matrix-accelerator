@@ -1,0 +1,23 @@
+{
+  "run_tag": "RUN_FINAL_SIGNOFF_20261025_002116_74830",
+  "run_directory": "runs/RUN_FINAL_SIGNOFF_20261025_002116_74830",
+  "visual_source": "RUN_FINAL_SIGNOFF_20261025_002116_74830",
+  "rtl_regression": "PASS",
+  "flow_return_code": 0,
+  "flow_completed": true,
+  "gds_generated_in_attempt": true,
+  "antenna_violation_count": 0.0,
+  "slew_violation_count": 0.0,
+  "cap_violation_count": 0.0,
+  "fanout_violation_count": 0.0,
+  "setup_slack_ns": 5.112559409423507,
+  "hold_slack_ns": 0.04117595270183328,
+  "lvs_pass": true,
+  "drc_pass": true,
+  "full_signoff_pass": true,
+  "visuals": [
+    "docs/images/physical_design/floorplan.svg",
+    "docs/images/physical_design/congestion.svg",
+    "docs/images/physical_design/timing.svg"
+  ]
+}

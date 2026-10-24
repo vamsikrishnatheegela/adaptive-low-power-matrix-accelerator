@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="100%" height="100%" fill="#f7f9fc"/>
+<text x="40" y="40" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#152238">Global Routing Congestion</text>
+<text x="40" y="66" font-family="Arial,sans-serif" font-size="12" fill="#5a687d">Per-layer resource usage | openroad-globalrouting.log</text>
+<text x="140" y="144.0" text-anchor="end" font-family="Arial" font-size="13" fill="#24364b">li1</text>
+<rect x="170" y="125" width="790" height="25" rx="4" fill="#e3e9f1"/>
+<rect x="170" y="125" width="0.00" height="25" rx="4" fill="#2a9d8f"/>
+<text x="178.0" y="143.0" font-family="Arial" font-size="12" fill="#24364b">0.00%</text>
+<text x="1010" y="143.0" font-family="Arial" font-size="10" fill="#5a687d">demand 0 / resource 0</text>
+<text x="140" y="194.0" text-anchor="end" font-family="Arial" font-size="13" fill="#24364b">met1</text>
+<rect x="170" y="175" width="790" height="25" rx="4" fill="#e3e9f1"/>
+<rect x="170" y="175" width="790.00" height="25" rx="4" fill="#2a9d8f"/>
+<text x="968.0" y="193.0" font-family="Arial" font-size="12" fill="#24364b">49.92%</text>
+<text x="1010" y="193.0" font-family="Arial" font-size="10" fill="#5a687d">demand 8,631 / resource 17,289</text>
+<text x="140" y="244.0" text-anchor="end" font-family="Arial" font-size="13" fill="#24364b">met2</text>
+<rect x="170" y="225" width="790" height="25" rx="4" fill="#e3e9f1"/>
+<rect x="170" y="225" width="730.34" height="25" rx="4" fill="#2a9d8f"/>
+<text x="908.3" y="243.0" font-family="Arial" font-size="12" fill="#24364b">46.15%</text>
+<text x="1010" y="243.0" font-family="Arial" font-size="10" fill="#5a687d">demand 8,282 / resource 17,944</text>
+<text x="140" y="294.0" text-anchor="end" font-family="Arial" font-size="13" fill="#24364b">met3</text>
+<rect x="170" y="275" width="790" height="25" rx="4" fill="#e3e9f1"/>
+<rect x="170" y="275" width="124.86" height="25" rx="4" fill="#2a9d8f"/>
+<text x="302.9" y="293.0" font-family="Arial" font-size="12" fill="#24364b">7.89%</text>
+<text x="1010" y="293.0" font-family="Arial" font-size="10" fill="#5a687d">demand 990 / resource 12,543</text>
+<text x="140" y="344.0" text-anchor="end" font-family="Arial" font-size="13" fill="#24364b">met4</text>
+<rect x="170" y="325" width="790" height="25" rx="4" fill="#e3e9f1"/>
+<rect x="170" y="325" width="132.30" height="25" rx="4" fill="#2a9d8f"/>
+<text x="310.3" y="343.0" font-family="Arial" font-size="12" fill="#24364b">8.36%</text>
+<text x="1010" y="343.0" font-family="Arial" font-size="10" fill="#5a687d">demand 676 / resource 8,090</text>
+<text x="140" y="394.0" text-anchor="end" font-family="Arial" font-size="13" fill="#24364b">met5</text>
+<rect x="170" y="375" width="790" height="25" rx="4" fill="#e3e9f1"/>
+<rect x="170" y="375" width="14.08" height="25" rx="4" fill="#2a9d8f"/>
+<text x="192.1" y="393.0" font-family="Arial" font-size="12" fill="#24364b">0.89%</text>
+<text x="1010" y="393.0" font-family="Arial" font-size="10" fill="#5a687d">demand 16 / resource 1,804</text>
+<text x="170" y="735" font-family="Arial" font-size="12" fill="#5a687d">Global-routing resource usage by layer; not a detailed-routing heatmap.</text>
+</svg>

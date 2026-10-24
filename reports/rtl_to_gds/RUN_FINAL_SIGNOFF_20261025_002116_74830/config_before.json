@@ -1,0 +1,31 @@
+{
+  "DESIGN_NAME": "power_aware_matrix_accelerator",
+  "VERILOG_FILES": [
+    "dir::rtl/mac_tile_2x2.sv",
+    "dir::rtl/adaptive_power_manager.sv",
+    "dir::rtl/matrix_accelerator.sv",
+    "dir::rtl/power_aware_matrix_accelerator.sv"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 20,
+  "PNR_SDC_FILE": "dir::constraints/power_aware_matrix_accelerator.sdc",
+  "SIGNOFF_SDC_FILE": "dir::constraints/power_aware_matrix_accelerator.sdc",
+  "RUN_HEURISTIC_DIODE_INSERTION": true,
+  "GPL_CELL_PADDING": 2,
+  "DPL_CELL_PADDING": 2,
+  "DRT_ANTENNA_REPAIR_ITERS": 10,
+  "RUN_POST_GRT_DESIGN_REPAIR": true,
+  "GRT_DESIGN_REPAIR_MAX_SLEW_PCT": 30,
+  "GRT_DESIGN_REPAIR_MAX_CAP_PCT": 30,
+  "GRT_DESIGN_REPAIR_MAX_WIRE_LENGTH": 6500,
+  "HEURISTIC_ANTENNA_THRESHOLD": 90,
+  "DESIGN_REPAIR_MAX_SLEW_PCT": 50,
+  "DESIGN_REPAIR_MAX_CAP_PCT": 50,
+  "DESIGN_REPAIR_MAX_WIRE_LENGTH": 800,
+  "RUN_ANTENNA_REPAIR": true,
+  "GRT_ANTENNA_REPAIR_ITERS": 10,
+  "GRT_ANTENNA_REPAIR_MARGIN": 40,
+  "DRT_ANTENNA_REPAIR_MARGIN": 30,
+  "DRT_ANTENNA_REPAIR_JUMPER_ONLY": true,
+  "DIODE_CELL": "sky130_fd_sc_hd__diode_2/DIODE"
+}
