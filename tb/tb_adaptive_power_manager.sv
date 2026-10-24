@@ -27,7 +27,11 @@ module tb_adaptive_power_manager;
         workload_active=1; tick();
         check_condition(compute_enable,"active workload enables compute");
         requested_operating_point=2; tick();
-        check_condition(dvfs_request && !compute_enable,"DVFS pauses compute");
+        check_condition(!dvfs_request && compute_enable,
+                        "operating-point change must defer while workload is active");
+        workload_active=0; tick();
+        check_condition(dvfs_request && !compute_enable,
+                        "DVFS starts after workload drains");
         dvfs_ack=1; tick(); dvfs_ack=0;
         check_condition(operating_point==2,"ack updates operating point");
         workload_active=0; sleep_request=1; idle_count=4; tick();
